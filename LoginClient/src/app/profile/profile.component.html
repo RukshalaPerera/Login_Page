@@ -1,0 +1,25 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+@if (currentUser) {
+    <div class="container">
+      <header class="jumbotron">
+        <h3>
+          <strong>{{ currentUser.username }}</strong> Profile
+        </h3>
+      </header>
+      <p>
+        <strong>Email:</strong>
+        {{ currentUser.email }}
+      </p>
+      <strong>Roles:</strong>
+      <ul>
+        @for (role of currentUser.roles; track role) {
+        <li>{{ role }}</li>
+        }
+      </ul>
+    </div>
+    } @else {
+    <p>Please login.</p>
+    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
